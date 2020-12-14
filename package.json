@@ -14,16 +14,14 @@
   "dependencies": {
     "apollo-server-express": "^1.1.2",
     "body-parser": "^1.18.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-inline-import": "^2.0.6",
+    "babel-preset-env": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.15.4",
     "graphql": "^0.11.3",
     "graphql-tools": "^1.2.2",
     "sucrase": "^3.16.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-inline-import": "^2.0.6",
-    "babel-preset-env": "^1.6.0"
   },
   "engines": {
     "node": "12.18.3",
