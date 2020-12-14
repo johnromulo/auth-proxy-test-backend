@@ -6,7 +6,8 @@ import schema from "./schema";
 
 const app = express();
 
-const port = 3400;
+const port = process.env.PORT || 3400;
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(
