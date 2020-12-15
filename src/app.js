@@ -10,15 +10,7 @@ const port = process.env.PORT || 3400;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(
-  "/api/graphql",
-  bodyParser.json(),
-  (req, res, next) => {
-    console.log('graphql req.headers["auth-token"]', req.headers["auth-token"]);
-    next();
-  },
-  graphqlExpress({ schema })
-);
+
 app.use(
   "/api/graphiql",
   graphiqlExpress({
@@ -27,6 +19,16 @@ app.use(
 );
 
 const routes = express.Router();
+
+routes.post(
+  "/api/graphql",
+  bodyParser.json(),
+  (req, res, next) => {
+    console.log('graphql req.headers["auth-token"]', req.headers["auth-token"]);
+    next();
+  },
+  graphqlExpress({ schema })
+);
 
 routes.post("/api/login", (req, res) => {
   console.log('api/login req.headers["auth-token"]', req.headers["auth-token"]);
