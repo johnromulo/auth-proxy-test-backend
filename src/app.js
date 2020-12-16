@@ -71,5 +71,10 @@ routes.get("/api/teste", (req, res) => {
   }
 });
 
+routes.post("/api/tokens", (req, res) => {
+  console.log("res", req.body.tokens);
+  res.status(200).json({ ok: true });
+});
+
 app.use(routes);
 app.listen(port, () => console.log(`Server on ${port}`));
